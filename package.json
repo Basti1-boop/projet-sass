@@ -1,0 +1,16 @@
+{
+  "name": "projet-sass",
+  "version": "1.0.0",
+  "description": "Environnement Sass et architecture SMACSS",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass scss/main.scss css/style.css",
+    "sass:watch": "sass --watch scss/main.scss css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.105.1"
+  }
+}

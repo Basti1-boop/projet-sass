@@ -10,26 +10,10 @@
 @use "layout/footer";
 @use "layout/grid";
 
-@use "modules/button";
 @use "modules/badge";
-@use "modules/card";
-@use "modules/field";
-@use "modules/checkbox";
-@use "modules/filter";
+@use "modules/button";
+@use "modules/carte";
 @use "modules/faq";
-@use "modules/pass";
-@use "modules/scene-banner";
-@use "modules/info-block";
-@use "modules/contact-band";
-@use "modules/stat";
-@use "modules/hero";
-@use "modules/page-title";
-@use "modules/artist";
-@use "modules/booking-form";
-@use "modules/nav";
-@use "modules/logo";
+@use "modules/filtres";
+@use "modules/formulaires";
 
-@use "state/states";
-
-@use "theme/scenes";
-@use "theme/dark-mode";

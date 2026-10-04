@@ -1,0 +1,14 @@
+// Conteneur : centre le contenu sur la largeur de la maquette (1200px) et
+// garde une gouttière sur les écrans plus étroits.
+@use "../abstracts/mixins";
+
+.l-container {
+  --container-gutter: var(--space-sm);
+
+  width: min(100% - 2 * var(--container-gutter), var(--size-container));
+  margin-inline: auto;
+
+  @include mixins.breakpoint("tablet") {
+    --container-gutter: var(--space-lg);
+  }
+}

@@ -1,1 +1,99 @@
-// Styles de l'en-tête (l-header).
+// En-tête du site (l-header) : logo, navigation, actions.
+@use "../abstracts/mixins";
+
+.l-header {
+    background: var(--color-bg);
+    border-bottom: var(--border-width-thin) solid var(--color-border);
+}
+
+.l-header__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-sm) var(--space-lg);
+    min-height: var(--size-header);
+    padding-block: var(--space-sm);
+
+    @include mixins.breakpoint("desktop") {
+    flex-wrap: nowrap;
+    }
+}
+
+// Logo ----------------------------------------------------------------------
+.l-header__logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs);
+}
+
+.l-header__logo-mark {
+    flex: none;
+    width: var(--size-logo-mark);
+    height: var(--size-logo-mark);
+
+    circle:first-child {
+    fill: var(--color-primary);
+    }
+
+    circle:last-child {
+    fill: none;
+    stroke: var(--color-text-inverse);
+    stroke-width: var(--border-width-thick);
+    }
+}
+
+.l-header__logo-name {
+    display: block;
+    color: var(--color-text-primary);
+    font-size: var(--font-size-title-card);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-compact);
+}
+
+.l-header__logo-baseline {
+    display: block;
+    margin-top: var(--space-xs);
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-caption);
+    line-height: var(--line-height-compact);
+}
+
+// Navigation ----------------------------------------------------------------
+.l-header__nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm) var(--space-lg);
+    order: 3;
+    width: 100%;
+    color: var(--color-text-secondary);
+
+    @include mixins.breakpoint("desktop") {
+    flex: 1;
+    justify-content: center;
+    order: 0;
+    width: auto;
+    }
+
+    a {
+    padding-block: var(--space-xs);
+    border-bottom: var(--border-width-thick) solid transparent;
+    }
+
+    a:hover {
+    color: var(--color-text-primary);
+    }
+
+    a[aria-current="page"] {
+    border-bottom-color: var(--color-primary);
+    color: var(--color-text-primary);
+    font-weight: var(--font-weight-bold);
+    }
+}
+
+// Actions -------------------------------------------------------------------
+.l-header__actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-left: auto;
+}
+

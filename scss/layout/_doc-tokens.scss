@@ -1,0 +1,147 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as f;
+
+.l-doc__swatch {
+  display: grid;
+  gap: var(--space-xs);
+  justify-items: start;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-compact);
+}
+
+.l-doc__swatch-dot {
+  width: var(--size-swatch);
+  height: var(--size-swatch);
+  border: var(--border-width-thin) solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--swatch-color);
+}
+
+.l-doc__swatch-value,
+.l-doc__scene-value {
+  font-family: inherit;
+}
+
+.l-doc__scene {
+  display: grid;
+  gap: var(--space-xs);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-compact);
+}
+
+.l-doc__scene-chip {
+  display: flex;
+  align-items: center;
+  width: var(--size-scene-chip-width);
+  height: var(--size-scene-chip-height);
+  padding-inline: var(--space-sm);
+  border-radius: var(--radius-sm);
+  background: var(--scene-bg);
+  color: var(--scene-text);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.l-doc__type {
+  white-space: nowrap;
+}
+
+.l-doc__space {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-xs);
+  width: var(--size-doc-sample);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-compact);
+}
+
+.l-doc__space-square {
+  flex: none;
+  background: var(--color-primary);
+}
+
+.l-doc__row--tokens-spaces .l-doc__items {
+  align-items: flex-end;
+  gap: 0;
+}
+
+.l-doc__row--tokens-type .l-doc__items {
+  align-items: baseline;
+  gap: var(--space-lg);
+}
+
+@mixin swatch($role, $value) {
+  .l-doc__swatch--#{$role} {
+    --swatch-color: var(--color-#{$role});
+
+    .l-doc__swatch-value::after {
+      content: "#{$value}";
+    }
+  }
+}
+
+@mixin scene($name, $value) {
+  .l-doc__scene--#{$name} {
+    --scene-bg: var(--color-scene-#{$name});
+    --scene-text: var(--color-text-on-scene-#{$name});
+
+    .l-doc__scene-value::after {
+      content: "#{$value}";
+    }
+  }
+}
+
+@mixin type-sample($role, $size, $weight, $color) {
+  .l-doc__type--#{$role} {
+    color: var(--color-#{$color});
+    font-size: var(--font-size-#{$role});
+    font-weight: var(--font-weight-#{$weight});
+    line-height: var(--line-height-#{$role});
+
+    &::after {
+      content: " #{f.raw-number($size)}";
+    }
+  }
+}
+
+@mixin space-sample($role, $size) {
+  .l-doc__space--#{$role} {
+    .l-doc__space-square {
+      width: var(--space-#{$role});
+      height: var(--space-#{$role});
+    }
+
+    .l-doc__space-value::after {
+      content: "#{f.px-label($size)}";
+    }
+  }
+}
+
+@include swatch("text-primary", v.$color-text-primary);
+@include swatch("text-normal", v.$color-text-normal);
+@include swatch("text-secondary", v.$color-text-secondary);
+@include swatch("bg-alt", v.$color-bg-alt);
+@include swatch("border", v.$color-border);
+@include swatch("primary", v.$color-primary);
+@include swatch("primary-hover", v.$color-primary-hover);
+@include swatch("accent", v.$color-accent);
+@include swatch("error", v.$color-error);
+
+@include scene("lake", v.$color-scene-lake);
+@include scene("forest", v.$color-scene-forest);
+@include scene("kiosk", v.$color-scene-kiosk);
+
+@include type-sample("title-section", v.$font-size-title-section, "bold", "text-primary");
+@include type-sample("subtitle", v.$font-size-subtitle, "bold", "text-primary");
+@include type-sample("intro", v.$font-size-intro, "regular", "text-normal");
+@include type-sample("body", v.$font-size-body, "regular", "text-normal");
+@include type-sample("small", v.$font-size-small, "regular", "text-secondary");
+
+@include space-sample("xs", v.$spacing-xs);
+@include space-sample("sm", v.$spacing-sm);
+@include space-sample("md", v.$spacing-md);
+@include space-sample("lg", v.$spacing-lg);
+@include space-sample("xl", v.$spacing-xl);

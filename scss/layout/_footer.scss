@@ -1,1 +1,79 @@
 // Styles du pied de page (l-footer).
+@use "../abstracts/mixins";
+
+.l-footer {
+  margin-top: var(--space-xl);
+  padding-block: var(--space-xl) var(--space-md);
+  background: var(--color-surface-dark);
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.l-footer__columns {
+  display: grid;
+  gap: var(--space-lg);
+
+  @include mixins.breakpoint("tablet") {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // Proportions de la maquette : marque · liens · contact · newsletter
+  @include mixins.breakpoint("desktop") {
+    grid-template-columns: 26fr 11fr 13fr 10fr;
+  }
+}
+
+.l-footer__brand-name {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-title-card);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-compact);
+}
+
+.l-footer__title {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-bold);
+}
+
+.l-footer__list {
+  display: grid;
+  gap: var(--space-xs);
+
+  a:hover {
+    color: var(--color-text-inverse);
+  }
+}
+
+.l-footer__newsletter {
+  width: 100%;
+  height: var(--size-field-compact);
+  padding-inline: var(--space-sm);
+  border: var(--border-width-thin) solid var(--color-field-on-dark-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-field-on-dark-bg);
+  color: var(--color-text-inverse);
+  font-size: var(--font-size-small);
+
+  &::placeholder {
+    color: var(--color-text-on-dark-subtle);
+  }
+}
+
+.l-footer__legal {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: var(--border-width-thin) solid var(--color-border-on-dark);
+  color: var(--color-text-on-dark-subtle);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-compact);
+
+  a:hover {
+    color: var(--color-text-inverse);
+  }
+}

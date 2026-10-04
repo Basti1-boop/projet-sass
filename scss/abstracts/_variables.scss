@@ -1,1 +1,104 @@
-// Variables Sass partagées du projet.
+// Couleurs
+$color-text-primary: #1C1B2E;
+$color-text-normal: #3A3950;
+$color-text-secondary: #6B6A80;
+$color-text-inverse: #FFFFFF;
+$color-text-disabled: #9A9DA8;
+
+$color-bg: #FFFFFF;
+$color-bg-alt: #F4F5F7;
+$color-surface-dark: #1C1B2E;
+$color-border: #E3E5EA;
+$color-border-field: #CBD0D8;
+
+$color-primary: #C8402A;
+$color-primary-hover: #A3311F;
+$color-secondary: #1C1B2E;
+$color-accent: #F4C95D;
+$color-error: #B3261E;
+$color-focus-ring: #F2B8AC;
+
+$color-scene-lake: #1F4E8C;
+$color-scene-forest: #2F6B3A;
+$color-scene-kiosk: #B87A1E;
+$color-text-on-scene-lake: #FFFFFF;
+$color-text-on-scene-forest: #FFFFFF;
+$color-text-on-scene-kiosk: #1C1B2E;
+
+$color-status-success-bg: #E3F1E6;
+$color-status-success-text: #2F6B3A;
+$color-status-warning-bg: #FDF1D6;
+$color-status-warning-text: #7A4F00;
+$color-status-danger-bg: #FBE3E1;
+
+$color-text-on-dark-muted: #C9C7D6;
+$color-text-on-dark-subtle: #8E8CA3;
+$color-border-on-dark: #3A3950;
+$color-field-on-dark-bg: #2A2940;
+$color-field-on-dark-border: #4A4960;
+
+// Typographie
+$font-family-base: "Inter", system-ui, sans-serif;
+
+$font-size-title-main: 56px;
+$font-size-title-section: 40px;
+$font-size-subtitle: 28px;
+$font-size-intro: 20px;
+$font-size-body: 16px;
+$font-size-small: 14px;
+$font-size-caption: 12px;
+$font-size-help: 13px;
+$font-size-label: 15px;
+$font-size-title-compact: 17px;
+$font-size-title-lead: 18px;
+$font-size-title-card: 20px;
+$font-size-title-wide: 22px;
+$font-size-title-featured: 26px;
+$font-size-price: 36px;
+
+$line-height-title-main: 64px;
+$line-height-title-section: 48px;
+$line-height-subtitle: 36px;
+$line-height-intro: 32px;
+$line-height-body: 26px;
+$line-height-small: 22px;
+$line-height-compact: 1.25;
+
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Espacements
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 40px;
+$spacing-xl: 64px;
+
+// Rayons de bordure
+$radius-sm: 6px;
+$radius-md: 12px;
+$radius-pill: 999px;
+
+// Épaisseurs de bordure
+$border-width-thin: 1px;
+$border-width-medium: 2px;
+$border-width-thick: 3px;
+
+// Dimensions
+$size-container: 1200px;
+$size-header: 88px;
+$size-logo-mark: 36px;
+$size-control-sm: 36px;
+$size-control-md: 48px;
+$size-control-lg: 56px;
+$size-field-compact: 44px;
+$size-swatch: 48px;
+$size-scene-chip-width: 180px;
+$size-scene-chip-height: 52px;
+$size-doc-label: 240px;
+$size-doc-sample: 120px;
+
+// Points de rupture
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1200px;

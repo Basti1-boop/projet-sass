@@ -1,0 +1,107 @@
+// Mise en page de la page des composants (composants.html).
+// Structure : bandeau de titre, sommaire, puis une section par composant.
+// Une section = un en-tête (titre, filet, phrase de présentation) suivi de
+// lignes « libellé + exemples », sur le modèle d'une documentation de composants.
+// Aucune valeur écrite en dur : tout vient des propriétés personnalisées.
+@use "../abstracts/mixins";
+
+// Bandeau de titre ------------------------------------------------------------
+.l-page-title {
+  padding-block: var(--space-lg);
+  background: var(--color-bg-alt);
+}
+
+.l-page-title__breadcrumb {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-compact);
+
+  a:hover {
+    color: var(--color-primary);
+  }
+}
+
+.l-page-title__title {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-title-section);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-title-section);
+}
+
+.l-page-title__lead {
+  margin-top: var(--space-sm);
+  color: var(--color-text-normal);
+  font-size: var(--font-size-intro);
+  line-height: var(--line-height-intro);
+}
+
+// Sommaire --------------------------------------------------------------------
+.l-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm) var(--space-lg);
+  margin-top: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: var(--border-width-thin) solid var(--color-border);
+
+  a {
+    color: var(--color-primary);
+    font-size: var(--font-size-label);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-compact);
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+// Section ---------------------------------------------------------------------
+.l-doc {
+  margin-top: var(--space-xl);
+}
+
+.l-doc__header {
+  margin-bottom: var(--space-lg);
+}
+
+.l-doc__title {
+  padding-bottom: var(--space-sm);
+  font-size: var(--font-size-subtitle);
+  line-height: var(--line-height-subtitle);
+  border-bottom: var(--border-width-medium) solid var(--color-primary);
+}
+
+.l-doc__intro {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+}
+
+// Ligne d'exemples : libellé à gauche, exemples à droite (empilés sur mobile)
+.l-doc__row {
+  display: grid;
+  gap: var(--space-sm);
+  align-items: center;
+
+  & + & {
+    margin-top: var(--space-md);
+  }
+
+  @include mixins.breakpoint("tablet") {
+    grid-template-columns: var(--size-doc-label) 1fr;
+  }
+}
+
+.l-doc__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-compact);
+}
+
+.l-doc__items {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-md);
+}

@@ -1,19 +1,32 @@
 body {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 16px;     
-  font-weight: 400;
-  line-height: 1.6; 
+  background: var(--color-bg);
+  color: var(--color-text-normal);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-body);
 }
 
-h1 { font-size: 56px;
-  font-weight: 800;
-  line-height: 64px;
-}     
-h2 { font-size: 40px;
-  font-weight: 700;
-  line-height: 48px;
-}     
-h3 { font-size: 28px;
-  font-weight: 700;
-  line-height: 36px;
+h1 {
+  font-size: var(--font-size-title-main);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-title-main);
+}
+
+h2 {
+  font-size: var(--font-size-title-section);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-title-section);
+}
+
+h3 {
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-subtitle);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-primary);
 }

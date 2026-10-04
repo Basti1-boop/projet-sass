@@ -1,1 +1,17 @@
 // Mixins Sass partagés du projet.
+@use "variables" as v;
+
+// Media query mobile d'abord : @include breakpoint("tablet") { … }
+@mixin breakpoint($name) {
+  @if $name == "tablet" {
+    @media (min-width: v.$breakpoint-tablet) {
+      @content;
+    }
+  } @else if $name == "desktop" {
+    @media (min-width: v.$breakpoint-desktop) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint `#{$name}` is not defined.";
+  }
+}

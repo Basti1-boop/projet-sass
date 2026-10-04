@@ -3,12 +3,16 @@
 @use "abstracts/mixins";
 @use "abstracts/functions";
 
+@use "base/variables" as base-vars;
 @use "base/reset";
 @use "base/typography";
 
 @use "layout/header";
 @use "layout/footer";
 @use "layout/grid";
+@use "layout/container";
+@use "layout/doc";
+@use "layout/doc-tokens";
 
 @use "modules/badge";
 @use "modules/button";
@@ -16,4 +20,3 @@
 @use "modules/faq";
 @use "modules/filtres";
 @use "modules/formulaires";
-

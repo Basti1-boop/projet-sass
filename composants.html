@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bibliothèque de composants · Résonances</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <header class="l-header">
+    <div class="l-container l-header__inner">
+      <a class="l-header__logo" href="index.html" aria-label="Résonances, accueil">
+        <svg class="l-header__logo-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="18"/>
+          <circle cx="18" cy="18" r="10"/>
+        </svg>
+        <span>
+          <span class="l-header__logo-name">RÉSONANCES</span>
+          <span class="l-header__logo-baseline">Festival · 9 au 11 juillet 2027</span>
+        </span>
+      </a>
+
+      <nav class="l-header__nav" aria-label="Navigation principale">
+        <a href="index.html">Accueil</a>
+        <a href="programme.html">Programme</a>
+        <a href="billetterie.html">Billetterie</a>
+        <a href="infos-pratiques.html">Infos pratiques</a>
+      </nav>
+
+      <div class="l-header__actions">
+        <button class="button button--outline theme-toggle" type="button">Mode sombre</button>
+        <a class="button button--primary" href="billetterie.html">Réserver</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="l-page-title">
+      <div class="l-container">
+        <p class="l-page-title__breadcrumb"><a href="index.html">Accueil</a> / Bibliothèque de composants</p>
+        <h1 class="l-page-title__title">Bibliothèque de composants</h1>
+        <p class="l-page-title__lead">Tous les composants du site, avec leurs variantes et leurs états.</p>
+      </div>
+    </div>
+
+    <div class="l-container">
+
+      <nav class="l-toc" aria-label="Sommaire de la bibliothèque">
+        <a href="#jetons">Jetons</a>
+        <a href="#boutons">Boutons</a>
+        <a href="#badges">Badges</a>
+        <a href="#cartes">Cartes</a>
+        <a href="#formulaires">Formulaires</a>
+        <a href="#filtres">Filtres</a>
+        <a href="#faq">Questions fréquentes</a>
+      </nav>
+
+      <!-- ===================================================================
+           Jetons
+           Les couleurs, tailles et valeurs affichées ci-dessous ne sont écrites
+           nulle part dans le HTML : elles viennent des maps de
+           scss/abstracts/_variables.scss (voir scss/layout/_doc-tokens.scss).
+           =================================================================== -->
+      <section class="l-doc" id="jetons" aria-labelledby="jetons-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="jetons-titre">Jetons</h2>
+          <p class="l-doc__intro">Couleurs, typographie et espacements utilisés par tous les composants.</p>
+        </header>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Couleurs</h3>
+          <ul class="l-doc__items">
+            <li class="l-doc__swatch l-doc__swatch--text-primary">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Texte principal</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--text-normal">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Texte courant</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--text-secondary">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Texte secondaire</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--bg-alt">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Fond alterné</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--border">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Bordures</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--primary">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Principale</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--primary-hover">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Survol</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--accent">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Accent</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+            <li class="l-doc__swatch l-doc__swatch--error">
+              <span class="l-doc__swatch-dot"></span>
+              <span>Erreur</span>
+              <code class="l-doc__swatch-value"></code>
+            </li>
+          </ul>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Scènes</h3>
+          <ul class="l-doc__items">
+            <li class="l-doc__scene l-doc__scene--lake">
+              <span class="l-doc__scene-chip">Scène du Lac</span>
+              <code class="l-doc__scene-value"></code>
+            </li>
+            <li class="l-doc__scene l-doc__scene--forest">
+              <span class="l-doc__scene-chip">Scène de la Forêt</span>
+              <code class="l-doc__scene-value"></code>
+            </li>
+            <li class="l-doc__scene l-doc__scene--kiosk">
+              <span class="l-doc__scene-chip">Le Kiosque</span>
+              <code class="l-doc__scene-value"></code>
+            </li>
+          </ul>
+        </div>
+
+        <div class="l-doc__row l-doc__row--tokens-type">
+          <h3 class="l-doc__label">Typographie</h3>
+          <ul class="l-doc__items">
+            <li class="l-doc__type l-doc__type--title-section">Titre</li>
+            <li class="l-doc__type l-doc__type--subtitle">Sous-titre</li>
+            <li class="l-doc__type l-doc__type--intro">Introduction</li>
+            <li class="l-doc__type l-doc__type--body">Courant</li>
+            <li class="l-doc__type l-doc__type--small">Petit</li>
+          </ul>
+        </div>
+
+        <div class="l-doc__row l-doc__row--tokens-spaces">
+          <h3 class="l-doc__label">Espacements</h3>
+          <ul class="l-doc__items">
+            <li class="l-doc__space l-doc__space--xs">
+              <span class="l-doc__space-square"></span>
+              <span class="l-doc__space-value"></span>
+            </li>
+            <li class="l-doc__space l-doc__space--sm">
+              <span class="l-doc__space-square"></span>
+              <span class="l-doc__space-value"></span>
+            </li>
+            <li class="l-doc__space l-doc__space--md">
+              <span class="l-doc__space-square"></span>
+              <span class="l-doc__space-value"></span>
+            </li>
+            <li class="l-doc__space l-doc__space--lg">
+              <span class="l-doc__space-square"></span>
+              <span class="l-doc__space-value"></span>
+            </li>
+            <li class="l-doc__space l-doc__space--xl">
+              <span class="l-doc__space-square"></span>
+              <span class="l-doc__space-value"></span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Sections à compléter composant par composant aux étapes suivantes :
+           chaque section garde le même schéma (titre, phrase, lignes d'exemples). -->
+      <section class="l-doc" id="boutons" aria-labelledby="boutons-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="boutons-titre">Boutons</h2>
+          <p class="l-doc__intro">Un composant de base, des variantes de couleur et de taille, une icône facultative et des états.</p>
+        </header>
+      </section>
+
+      <section class="l-doc" id="badges" aria-labelledby="badges-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="badges-titre">Badges</h2>
+          <p class="l-doc__intro">Pour signaler une scène, un statut ou un nombre.</p>
+        </header>
+      </section>
+
+      <section class="l-doc" id="cartes" aria-labelledby="cartes-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="cartes-titre">Cartes</h2>
+          <p class="l-doc__intro">La carte d’artiste, ses variantes, et les autres cartes du site.</p>
+        </header>
+      </section>
+
+      <section class="l-doc" id="formulaires" aria-labelledby="formulaires-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="formulaires-titre">Formulaires</h2>
+          <p class="l-doc__intro">Champ de saisie, liste déroulante et case à cocher, avec leurs états.</p>
+        </header>
+      </section>
+
+      <section class="l-doc" id="filtres" aria-labelledby="filtres-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="filtres-titre">Filtres</h2>
+          <p class="l-doc__intro">Groupe de boutons qui filtre le programme ; un seul filtre est sélectionné à la fois.</p>
+        </header>
+      </section>
+
+      <section class="l-doc" id="faq" aria-labelledby="faq-titre">
+        <header class="l-doc__header">
+          <h2 class="l-doc__title" id="faq-titre">Questions fréquentes</h2>
+          <p class="l-doc__intro">Accordéon : chaque question s’ouvre et se ferme indépendamment.</p>
+        </header>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="l-footer">
+    <div class="l-container">
+      <div class="l-footer__columns">
+        <div>
+          <strong class="l-footer__brand-name">RÉSONANCES</strong>
+          <p>Festival de musique au bord du lac des Aulnes. Trois jours, trois scènes, une quarantaine d’artistes.</p>
+        </div>
+
+        <nav aria-label="Pied de page">
+          <strong class="l-footer__title">Le festival</strong>
+          <ul class="l-footer__list">
+            <li><a href="programme.html">Programme</a></li>
+            <li><a href="billetterie.html">Billetterie</a></li>
+            <li><a href="infos-pratiques.html">Infos pratiques</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <strong class="l-footer__title">Contact</strong>
+          <ul class="l-footer__list">
+            <li><a href="mailto:contact@resonances-festival.fr">contact@resonances-festival.fr</a></li>
+            <li><a href="tel:0400000000">04 00 00 00 00</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <strong class="l-footer__title">Newsletter</strong>
+          <input class="l-footer__newsletter" type="email" name="newsletter" placeholder="Votre e-mail" aria-label="Newsletter : votre e-mail" autocomplete="email">
+        </div>
+      </div>
+
+      <p class="l-footer__legal">
+        © 2027 Association Résonances ·
+        <a href="#">Mentions légales</a> ·
+        <a href="#">Accessibilité</a> ·
+        <a href="#">Crédits photos</a>
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

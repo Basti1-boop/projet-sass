@@ -3,7 +3,7 @@
 // Une section = un en-tête (titre, filet, phrase de présentation) suivi de
 // lignes « libellé + exemples », sur le modèle d'une documentation de composants.
 // Aucune valeur écrite en dur : tout vient des propriétés personnalisées.
-@use "../abstracts/mixins";
+@use "../abstracts/variables" as v;
 
 // Bandeau de titre ------------------------------------------------------------
 .l-page-title {
@@ -87,9 +87,13 @@
     margin-top: var(--space-md);
   }
 
-  @include mixins.breakpoint("tablet") {
+  @media (min-width: v.$breakpoint-tablet) {
     grid-template-columns: var(--size-doc-label) 1fr;
   }
+}
+
+.l-doc__row--top {
+  align-items: start;
 }
 
 .l-doc__label {
@@ -104,4 +108,8 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-md);
+}
+
+.l-doc__items--baseline {
+  align-items: baseline;
 }

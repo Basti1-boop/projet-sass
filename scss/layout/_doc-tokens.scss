@@ -1,5 +1,9 @@
 @use "../abstracts/variables" as v;
-@use "../abstracts/functions" as f;
+@use "sass:math";
+
+@function raw-number($value) {
+  @return math.div($value, 1px);
+}
 
 .l-doc__swatch {
   display: grid;
@@ -102,7 +106,7 @@
     line-height: var(--line-height-#{$role});
 
     &::after {
-      content: " #{f.raw-number($size)}";
+      content: " #{raw-number($size)}";
     }
   }
 }
@@ -115,7 +119,7 @@
     }
 
     .l-doc__space-value::after {
-      content: "#{f.px-label($size)}";
+      content: "#{raw-number($size)} px";
     }
   }
 }

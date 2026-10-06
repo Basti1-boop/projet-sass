@@ -59,12 +59,6 @@
         <a href="#faq">Questions fréquentes</a>
       </nav>
 
-      <!-- ===================================================================
-           Jetons
-           Les couleurs, tailles et valeurs affichées ci-dessous ne sont écrites
-           nulle part dans le HTML : elles viennent des maps de
-           scss/abstracts/_variables.scss (voir scss/layout/_doc-tokens.scss).
-           =================================================================== -->
       <section class="l-doc" id="jetons" aria-labelledby="jetons-titre">
         <header class="l-doc__header">
           <h2 class="l-doc__title" id="jetons-titre">Jetons</h2>
@@ -178,13 +172,40 @@
         </div>
       </section>
 
-      <!-- Sections à compléter composant par composant aux étapes suivantes :
-           chaque section garde le même schéma (titre, phrase, lignes d'exemples). -->
+
       <section class="l-doc" id="boutons" aria-labelledby="boutons-titre">
         <header class="l-doc__header">
           <h2 class="l-doc__title" id="boutons-titre">Boutons</h2>
           <p class="l-doc__intro">Un composant de base, des variantes de couleur et de taille, une icône facultative et des états.</p>
         </header>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Variantes</h3>
+          <div class="l-doc__items">
+            <button class="button button--primary" type="button">Réserver</button>
+            <button class="button button--secondary" type="button">Découvrir le programme</button>
+            <button class="button button--outline" type="button">En savoir plus</button>
+            <a class="button button--text" href="#cartes">Voir les artistes <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Tailles</h3>
+          <div class="l-doc__items l-doc__items--baseline">
+            <button class="button button--primary button--small" type="button">Petit</button>
+            <button class="button button--primary" type="button">Standard</button>
+            <button class="button button--primary button--large" type="button">Grand format</button>
+          </div>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">États</h3>
+          <div class="l-doc__items">
+            <button class="button button--primary" type="button">Disponible</button>
+            <button class="button button--primary" type="button" disabled>Indisponible</button>
+            <button class="button button--outline" type="button">Action secondaire</button>
+          </div>
+        </div>
       </section>
 
       <section class="l-doc" id="badges" aria-labelledby="badges-titre">
@@ -192,6 +213,33 @@
           <h2 class="l-doc__title" id="badges-titre">Badges</h2>
           <p class="l-doc__intro">Pour signaler une scène, un statut ou un nombre.</p>
         </header>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Scènes</h3>
+          <div class="l-doc__items">
+            <span class="badge badge--lake">Scène du Lac</span>
+            <span class="badge badge--forest">Scène de la Forêt</span>
+            <span class="badge badge--kiosk">Le Kiosque</span>
+          </div>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Statuts</h3>
+          <div class="l-doc__items">
+            <span class="badge badge--success">Complet</span>
+            <span class="badge badge--warning">Dernières places</span>
+            <span class="badge badge--danger">Annulé</span>
+            <span class="badge badge--neutral">À venir</span>
+          </div>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label">Compteur</h3>
+          <div class="l-doc__items">
+            <span class="badge badge--count" aria-label="3 nouveaux messages">3</span>
+            <span class="badge badge--count badge--count-accent" aria-label="12 artistes">12</span>
+          </div>
+        </div>
       </section>
 
       <section class="l-doc" id="cartes" aria-labelledby="cartes-titre">
@@ -199,6 +247,53 @@
           <h2 class="l-doc__title" id="cartes-titre">Cartes</h2>
           <p class="l-doc__intro">La carte d’artiste, ses variantes, et les autres cartes du site.</p>
         </header>
+
+        <div class="l-doc__row l-doc__row--top">
+          <h3 class="l-doc__label">Artistes</h3>
+          <div class="l-doc__items card-grid">
+            <article class="card card--artist">
+              <div class="card__visual card__visual--lena" aria-hidden="true"><span>LM</span></div>
+              <div class="card__body">
+                <span class="badge badge--lake">Scène du Lac</span>
+                <h4 class="card__title">Léna Marée</h4>
+                <p class="card__text">Une pop lumineuse entre chanson française et synthétiseurs.</p>
+                <p class="card__meta">Vendredi · 21 h 30</p>
+              </div>
+            </article>
+            <article class="card card--artist">
+              <div class="card__visual card__visual--nuit" aria-hidden="true"><span>NA</span></div>
+              <div class="card__body">
+                <span class="badge badge--forest">Scène de la Forêt</span>
+                <h4 class="card__title">Nuit Azur</h4>
+                <p class="card__text">Des rythmes organiques au croisement du jazz et de l’électro.</p>
+                <p class="card__meta">Samedi · 22 h 15</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="l-doc__row l-doc__row--top">
+          <h3 class="l-doc__label">Billetterie</h3>
+          <div class="l-doc__items card-grid">
+            <article class="card card--ticket">
+              <div class="card__body">
+                <span class="badge badge--warning">Tarif prévente</span>
+                <h4 class="card__title">Pass 3 jours</h4>
+                <p class="card__text">Accès aux trois scènes pendant tout le festival.</p>
+                <p class="card__price">89 € <span>TTC</span></p>
+                <a class="button button--primary" href="billetterie.html">Choisir ce pass</a>
+              </div>
+            </article>
+            <article class="card card--notice">
+              <div class="card__body">
+                <span class="badge badge--neutral">À noter</span>
+                <h4 class="card__title">Un festival au bord du lac</h4>
+                <p class="card__text">Navettes gratuites depuis la gare toutes les 20 minutes.</p>
+                <a class="card__link" href="infos-pratiques.html">Préparer ma venue <span aria-hidden="true">→</span></a>
+              </div>
+            </article>
+          </div>
+        </div>
       </section>
 
       <section class="l-doc" id="formulaires" aria-labelledby="formulaires-titre">
@@ -206,6 +301,44 @@
           <h2 class="l-doc__title" id="formulaires-titre">Formulaires</h2>
           <p class="l-doc__intro">Champ de saisie, liste déroulante et case à cocher, avec leurs états.</p>
         </header>
+
+        <div class="l-doc__row l-doc__row--top">
+          <h3 class="l-doc__label">Champs</h3>
+          <form class="form-samples" action="#" method="get">
+            <div class="field">
+              <label class="field__label" for="sample-email">Adresse e-mail</label>
+              <input class="field__control" id="sample-email" name="email" type="email" placeholder="nom@exemple.fr" autocomplete="email">
+              <span class="field__help">Nous ne partagerons jamais votre adresse.</span>
+            </div>
+            <div class="field">
+              <label class="field__label" for="sample-day">Jour du festival</label>
+              <select class="field__control" id="sample-day" name="day">
+                <option value="">Choisir un jour</option>
+                <option>Vendredi 9 juillet</option>
+                <option>Samedi 10 juillet</option>
+                <option>Dimanche 11 juillet</option>
+              </select>
+            </div>
+            <div class="field field--error">
+              <label class="field__label" for="sample-error">Code de réservation</label>
+              <input class="field__control" id="sample-error" name="code" type="text" value="ABC" aria-invalid="true" aria-describedby="sample-error-message">
+              <span class="field__message" id="sample-error-message">Saisissez un code de 8 caractères.</span>
+            </div>
+            <div class="field field--success">
+              <label class="field__label" for="sample-success">Nom</label>
+              <input class="field__control" id="sample-success" name="name" type="text" value="Camille Martin" aria-describedby="sample-success-message">
+              <span class="field__message" id="sample-success-message">Nom enregistré.</span>
+            </div>
+            <label class="field__checkbox" for="sample-newsletter">
+              <input id="sample-newsletter" name="newsletter" type="checkbox">
+              <span>Recevoir les actualités du festival</span>
+            </label>
+            <label class="field__checkbox field__checkbox--disabled" for="sample-disabled">
+              <input id="sample-disabled" type="checkbox" disabled>
+              <span>Option momentanément indisponible</span>
+            </label>
+          </form>
+        </div>
       </section>
 
       <section class="l-doc" id="filtres" aria-labelledby="filtres-titre">
@@ -213,6 +346,26 @@
           <h2 class="l-doc__title" id="filtres-titre">Filtres</h2>
           <p class="l-doc__intro">Groupe de boutons qui filtre le programme ; un seul filtre est sélectionné à la fois.</p>
         </header>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label" id="filter-days-label">Par jour</h3>
+          <fieldset class="filter-group" aria-labelledby="filter-days-label">
+            <label class="filter"><input class="filter__input" type="radio" name="filter-day" value="all" checked><span class="filter__text">Tout le festival</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-day" value="friday"><span class="filter__text">Vendredi 9</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-day" value="saturday"><span class="filter__text">Samedi 10</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-day" value="sunday"><span class="filter__text">Dimanche 11</span></label>
+          </fieldset>
+        </div>
+
+        <div class="l-doc__row">
+          <h3 class="l-doc__label" id="filter-scenes-label">Par scène</h3>
+          <fieldset class="filter-group" aria-labelledby="filter-scenes-label">
+            <label class="filter"><input class="filter__input" type="radio" name="filter-scene" value="all" checked><span class="filter__text">Toutes les scènes</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-scene" value="lake"><span class="filter__text">Scène du Lac</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-scene" value="forest"><span class="filter__text">Scène de la Forêt</span></label>
+            <label class="filter"><input class="filter__input" type="radio" name="filter-scene" value="kiosk"><span class="filter__text">Le Kiosque</span></label>
+          </fieldset>
+        </div>
       </section>
 
       <section class="l-doc" id="faq" aria-labelledby="faq-titre">
@@ -220,6 +373,30 @@
           <h2 class="l-doc__title" id="faq-titre">Questions fréquentes</h2>
           <p class="l-doc__intro">Accordéon : chaque question s’ouvre et se ferme indépendamment.</p>
         </header>
+
+        <div class="l-doc__row l-doc__row--top">
+          <h3 class="l-doc__label">Accordéon</h3>
+          <div class="faq-list">
+            <details class="faq__item" open>
+              <summary class="faq__question">Où se déroule le festival ?</summary>
+              <div class="faq__answer">
+                <p>Le festival se tient au bord du lac des Aulnes. L’entrée principale se trouve à proximité de la plage et des navettes.</p>
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Comment venir en transport en commun ?</summary>
+              <div class="faq__answer">
+                <p>Des navettes gratuites relient la gare au site du festival toutes les 20 minutes pendant les trois jours.</p>
+              </div>
+            </details>
+            <details class="faq__item">
+              <summary class="faq__question">Puis-je venir avec mon billet sur mon téléphone ?</summary>
+              <div class="faq__answer">
+                <p>Oui, le billet numérique présenté sur votre téléphone est accepté à l’entrée.</p>
+              </div>
+            </details>
+          </div>
+        </div>
       </section>
 
     </div>

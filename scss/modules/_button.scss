@@ -1,30 +1,83 @@
 .button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-xs);
-    height: var(--size-control-md);
-    padding-inline: var(--space-md);
-    border: var(--border-width-medium) solid transparent;
-    border-radius: var(--radius-sm);
-    font-size: var(--font-size-body);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-compact);
-    white-space: nowrap;
-    cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: var(--size-control-md);
+  padding: var(--space-xs) var(--space-md);
+  border: var(--border-width-medium) solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-compact);
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+
+  &:focus-visible {
+    outline: var(--border-width-thick) solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    background: var(--color-bg-alt);
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+  }
 }
 
 .button--primary {
-    background: var(--color-primary);
-    color: var(--color-text-inverse);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
 
-    &:hover {
+  &:hover:not(:disabled) {
     background: var(--color-primary-hover);
-    }
+  }
+}
+
+.button--secondary {
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+
+  &:hover {
+    background: var(--color-text-normal);
+  }
 }
 
 .button--outline {
-    border-color: var(--color-text-primary);
-    background: transparent;
-    color: var(--color-text-primary);
+  border-color: var(--color-text-primary);
+  background: transparent;
+  color: var(--color-text-primary);
+
+  &:hover {
+    background: var(--color-bg-alt);
+  }
+}
+
+.button--text {
+  padding-inline: var(--space-xs);
+  background: transparent;
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary-hover);
+  }
+}
+
+.button--small {
+  min-height: var(--size-control-sm);
+  padding-inline: var(--space-sm);
+  font-size: var(--font-size-small);
+}
+
+.button--large {
+  min-height: var(--size-control-lg);
+  padding-inline: var(--space-lg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button {
+    transition: none;
+  }
 }

@@ -1,6 +1,5 @@
 // Styles du pied de page (l-footer).
-@use "../abstracts/mixins";
-
+@use "../abstracts/variables" as v;
 .l-footer {
   margin-top: var(--space-xl);
   padding-block: var(--space-xl) var(--space-md);
@@ -14,12 +13,12 @@
   display: grid;
   gap: var(--space-lg);
 
-  @include mixins.breakpoint("tablet") {
+  @media (min-width: v.$breakpoint-tablet) {
     grid-template-columns: 1fr 1fr;
   }
 
   // Proportions de la maquette : marque · liens · contact · newsletter
-  @include mixins.breakpoint("desktop") {
+  @media (min-width: v.$breakpoint-desktop) {
     grid-template-columns: 26fr 11fr 13fr 10fr;
   }
 }

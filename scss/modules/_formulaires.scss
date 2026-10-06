@@ -1,0 +1,98 @@
+.form-samples {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.field {
+  display: grid;
+  align-content: start;
+  gap: var(--space-xs);
+}
+
+.field__label {
+  color: var(--color-text-primary);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-compact);
+}
+
+.field__control {
+  width: 100%;
+  min-height: var(--size-control-md);
+  padding: var(--space-xs) var(--space-sm);
+  border: var(--border-width-thin) solid var(--color-border-field);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text-normal);
+  font-size: var(--font-size-body);
+
+  &::placeholder {
+    color: var(--color-text-secondary);
+  }
+
+  &:focus-visible {
+    border-color: var(--color-primary);
+    outline: var(--border-width-medium) solid var(--color-focus-ring);
+    outline-offset: 1px;
+  }
+
+  &:disabled {
+    background: var(--color-bg-alt);
+    color: var(--color-text-disabled);
+    cursor: not-allowed;
+  }
+}
+
+.field__help,
+.field__message {
+  font-size: var(--font-size-help);
+  line-height: var(--line-height-small);
+}
+
+.field__help {
+  color: var(--color-text-secondary);
+}
+
+.field--error .field__control {
+  border-color: var(--color-error);
+}
+
+.field--error .field__message {
+  color: var(--color-error);
+}
+
+.field--success .field__control {
+  border-color: var(--color-status-success-text);
+}
+
+.field--success .field__message {
+  color: var(--color-status-success-text);
+}
+
+.field__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  color: var(--color-text-normal);
+  font-size: var(--font-size-small);
+  cursor: pointer;
+
+  input {
+    flex: none;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--color-primary);
+  }
+
+  input:focus-visible {
+    outline: var(--border-width-medium) solid var(--color-focus-ring);
+    outline-offset: 2px;
+  }
+}
+
+.field__checkbox--disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}

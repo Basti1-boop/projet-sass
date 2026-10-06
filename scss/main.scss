@@ -1,8 +1,4 @@
 // Ordre des catégories SMACSS : abstracts, base, layout, modules, state, theme
-@use "abstracts/variables";
-@use "abstracts/mixins";
-@use "abstracts/functions";
-
 @use "base/variables" as base-vars;
 @use "base/reset";
 @use "base/typography";

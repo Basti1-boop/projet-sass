@@ -1,6 +1,5 @@
 // En-tête du site (l-header) : logo, navigation, actions.
-@use "../abstracts/mixins";
-
+@use "../abstracts/variables" as v;
 .l-header {
     background: var(--color-bg);
     border-bottom: var(--border-width-thin) solid var(--color-border);
@@ -14,7 +13,7 @@
     min-height: var(--size-header);
     padding-block: var(--space-sm);
 
-    @include mixins.breakpoint("desktop") {
+    @media (min-width: v.$breakpoint-desktop) {
     flex-wrap: nowrap;
     }
 }
@@ -67,7 +66,7 @@
     width: 100%;
     color: var(--color-text-secondary);
 
-    @include mixins.breakpoint("desktop") {
+    @media (min-width: v.$breakpoint-desktop) {
     flex: 1;
     justify-content: center;
     order: 0;
@@ -96,4 +95,3 @@
     gap: var(--space-sm);
     margin-left: auto;
 }
-

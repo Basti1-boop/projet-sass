@@ -1,12 +1,5 @@
 @use "../abstracts/variables" as *;
 
-// Couleurs de statut (à déplacer dans tes variables si tu veux)
-$success-bg:  #e3f4e6;
-$success-txt: #2f6b3a;
-$warning-bg:  #fdf0cf;
-$warning-txt: #8a5a00;
-$error-bg:    #fbdcd8;
-
 @keyframes spin { to { transform: rotate(360deg); } }
 
 // ======================== COMMUN ========================

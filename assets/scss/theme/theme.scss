@@ -283,7 +283,10 @@ body {
 
 .footer__column--about p,
 .footer__column a,
-.footer__column p,
+.footer__column p {
+    color: #9ca3af;
+}
+
 .footer__bottom {
     color: $txt__secondary;
 }

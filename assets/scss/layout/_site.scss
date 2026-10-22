@@ -1,0 +1,222 @@
+@use "../abstracts/variables" as *;
+
+$container: 1000px;
+$gap: 20px;
+
+.navbar__container,
+.hero__content,
+.festival__container,
+.headliners__container,
+.stages__container,
+.programme-header__container,
+.programme__container,
+.footer__container {
+    width: min($container, 100% - 48px);
+    margin-inline: auto;
+}
+
+// ======================== NAVBAR ========================
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space__m;
+    min-height: 72px;
+}
+
+// ======================== HERO ========================
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 470px;
+    overflow: hidden;
+}
+
+.hero__background,
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+}
+
+.hero__background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero__content {
+    position: relative;
+    padding: $space__xl 0;
+}
+
+// ======================== FESTIVAL ========================
+.festival {
+    padding: 60px 0 $space__l;
+}
+
+.festival__grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $space__l;
+}
+
+.festival__text {
+    max-width: 440px;
+}
+
+.festival__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 152px);
+    gap: $space__s;
+}
+
+.festival__stat {
+    aspect-ratio: 1;
+}
+
+// ======================== TÊTES D'AFFICHE ========================
+.headliners {
+    padding: $space__l 0;
+}
+
+.headliners__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $space__m;
+}
+
+.headliners__grid,
+.programme__artists {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap;
+}
+
+.headliners .artist-card__image {
+    height: 250px;
+}
+
+// ======================== SCÈNES ========================
+.stages {
+    padding: $space__m 0 $space__l;
+}
+
+.stages__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $gap;
+}
+
+// ======================== CARTES ARTISTE ========================
+.artist-card__image {
+    border-bottom: 4px solid transparent;
+}
+
+.artist-card:has(.artist-card__badge--lake) .artist-card__image {
+    border-bottom-color: $scene__lac;
+}
+
+.artist-card:has(.artist-card__badge--forest) .artist-card__image {
+    border-bottom-color: $scene__forest;
+}
+
+.artist-card:has(.artist-card__badge--kiosk) .artist-card__image {
+    border-bottom-color: $scene__kiosque;
+}
+
+// ======================== PROGRAMME ========================
+.programme-header {
+    padding: 28px 0;
+}
+
+.programme__container {
+    padding: $space__m 0 $space__xl;
+}
+
+.programme__filter-bar {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: $space__m;
+    margin-bottom: $space__l;
+}
+
+.programme__filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: $space__xs;
+}
+
+.programme__filter-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space__xs;
+}
+
+.programme__day {
+    margin-bottom: 56px;
+}
+
+.programme__day .programme__day-title {
+    margin-bottom: $space__s;
+    padding-bottom: $space__xs;
+    border-bottom: 1px solid $border__color;
+}
+
+// ======================== FOOTER ========================
+.footer {
+    padding: 48px 0 $space__m;
+}
+
+.footer__grid {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 1.2fr 1fr;
+    gap: $space__l;
+}
+
+.footer__bottom {
+    margin-top: $space__l;
+}
+
+// ======================== RESPONSIVE ========================
+@media (max-width: 900px) {
+    .navbar__container {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: $space__s 0;
+    }
+
+    .festival__grid {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .festival__stats {
+        grid-template-columns: repeat(3, 1fr);
+        width: 100%;
+    }
+
+    .headliners__grid,
+    .programme__artists,
+    .stages__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .programme__filter-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}

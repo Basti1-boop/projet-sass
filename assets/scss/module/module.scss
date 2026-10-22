@@ -323,6 +323,11 @@
     font-size: 12px;
 }
 
+.footer__column a,
+.footer__bottom a {
+    text-decoration: none;
+}
+
 .footer__column p {
     margin-bottom: 6px;
 }

@@ -10,7 +10,7 @@ $error-bg:    #fbdcd8;
 @keyframes spin { to { transform: rotate(360deg); } }
 
 // ======================== COMMUN ========================
-h2 {
+.page--composant h2 {
     margin: 0 0 $space__s;
     padding-bottom: $space__xs;
     border-bottom: 2px solid $primary__color;
@@ -18,7 +18,7 @@ h2 {
     color: $txt__primary;
 }
 
-section > p {
+.page--composant section > p {
     margin: 0 0 $space__m;
     font-size: $font__small;
     color: $txt__secondary;
@@ -660,186 +660,6 @@ section > p {
         }
     }
 
-    // ---------- Mise en page du festival ----------
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        height: 72px;
-    }
-
-    .navbar__container,
-    .hero__content,
-    .festival__container,
-    .headliners__container,
-    .stages__container,
-    .footer__container {
-        width: 100%;
-        max-width: 1140px;
-        margin: 0 auto;
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-    .navbar__container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .hero {
-        position: relative;
-        height: 480px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .hero__background {
-        position: absolute;
-        inset: 0;
-        z-index: 1;
-
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    }
-
-    .hero__overlay {
-        position: absolute;
-        inset: 0;
-    }
-
-    .hero__content {
-        position: relative;
-        z-index: 2;
-    }
-
-    .festival {
-        padding: 80px 0 60px;
-    }
-
-    .festival__grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-        align-items: center;
-    }
-
-    .festival__stats {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: $space__s;
-    }
-
-    .headliners,
-    .stages {
-        padding: 60px 0;
-    }
-
-    .headliners__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 30px;
-    }
-
-    .headliners__grid,
-    .stages__grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: $space__m;
-    }
-
-    .footer {
-        margin-top: 60px;
-        padding: 60px 0 30px;
-    }
-
-    .footer__grid {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr 1.5fr;
-        gap: $space__l;
-        margin-bottom: 50px;
-    }
-
-    .programme-header {
-        padding: 40px 0 50px;
-    }
-
-    .programme-header__container,
-    .programme__container {
-        width: 100%;
-        max-width: 1140px;
-        margin: 0 auto;
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-    .programme {
-        padding: 30px 0 60px;
-    }
-
-    .programme__filter-bar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: $space__m;
-        margin-bottom: 20px;
-        padding-bottom: 30px;
-    }
-
-    .programme__filter-group {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .programme__filter-buttons {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .programme__day {
-        margin-bottom: 50px;
-    }
-
-    .programme__artists {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: $space__m;
-    }
-
-    .page--programme .footer {
-        margin-top: 40px;
-    }
-
-    @media (max-width: 900px) {
-        .festival__grid,
-        .headliners__grid,
-        .stages__grid,
-        .footer__grid {
-            grid-template-columns: 1fr;
-        }
-
-        .navbar__links {
-            display: none;
-        }
-
-        .programme__artists {
-            grid-template-columns: 1fr;
-        }
-
-        .programme__filter-bar {
-            align-items: flex-start;
-            flex-direction: column;
-            gap: $space__s;
-        }
-    }
 }
 
 // ---------- Formulaires ----------

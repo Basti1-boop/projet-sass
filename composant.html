@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <section class="jetons">
+        <h2><strong>Jetons</strong></h2>
+        <br>
+        <p>
+            Couleurs, typographies et espacement utilisés par tout les composant
+        </p>
+        <div class="color">
+            <p><strong>Couleurs</strong></p>
+            <span class="color__principal"></span>
+            <span class="color__courant"></span>
+            <span class="color__altern"></span>
+            <span class="color__border"></span>
+            <span class="color__principal"></span>
+            <span class="color__hover"></span>
+            <span class="color__accent"></span>
+            <span class="color__error"></span>
+        </div>
+
+        <div class="scenes">
+            <p><strong>Scènes</strong></p>
+            <span class="sc__lac">Scène du Lac</span>
+            <span class="sc__forest">Scène de la Forêt</span>
+            <span class="sc__kiosque">Le kiosque</span>
+        </div>
+
+        <div class="typo">
+            <p><strong>Typographies</strong></p>
+            <span class="font__title">Titre 40</span>
+            <span class="font__subtitle">Sous Titre 28</span>
+            <span class="font__into">Introduction 20</span>
+            <span class="font__courant">Courant 16</span>
+            <span class="font__small">Petit 14</span>
+        </div>
+        <div class="space">
+            <p><strong>Espacement</strong></p>
+            <span class="space__xs"></span>
+            <span class="space__s"></span>
+            <span class="space__m"></span>
+            <span class="space__l"></span>  
+            <span class="space__xl"></span>
+        </div>
+    </section>
+
+    <section class="boutons">
+        <h2><strong>Boutons</strong></h2>
+        <br>
+        <p>Un composant de base, des variantes de couleur et de taille, une icône facultative et des états.</p>
+        <div class="bouton__base">
+            <p><strong>bouton de base</strong></p>
+            <button class="btn__base">Réserver</button>
+        </div>
+        <div class="btn__color">
+            <p><strong>Couleurs</strong></p>
+            <button class="btn__primary">Principal</button>
+            <button class="btn__secondary">Secondaire</button>
+            <button class="btn__border">Contour</button>
+            <div class="btn__dark"><button class="btn__light">Clair</button></div>
+        </div>
+
+        <div class="btn__size">
+            <p><strong>Tailles</strong></p>
+            <button class="btn__small">Petit</button>
+            <button class="btn__midum">Moyen</button>
+            <button class="btn__big">Grand</button>
+        </div>
+        <div class="btn__icon">
+            <p><strong>Avec Icon</strong></p>
+            <button class="btn__plus">&plus; Ajouter au programme</button>
+            <button class="btn__reserver"> Réserver</button>
+            <button class="btn__hearts">&hearts;</button>
+            <button class="btn__next">&RightArrow; Suivant</button>
+        </div>
+        <div class="btn__combinaison">
+            <p><strong>Combinaisons et états</strong></p>
+            <button class="btn__secondary__big">Secondaire grand</button>
+            <button class="btn__hover">Survol</button>
+            <button class="btn__focus">Focus clavier</button>
+            <button class="btn__disabled" disabled>Désactivé</button>
+            <button class="btn__load">Chargement</button>
+        </div>
+    </section>
+
+    <section class="badges">
+        <h2>Badges</h2>
+        <br>
+        <p>Pour signaler une scéne, un statut ou un nombre.</p>
+        <div class="badge__base">
+            <span class="bd__bage">Badge</span>
+        </div>
+        <div class="badge__scenes">
+            <p><strong>Scènes</strong></p>
+            <span class="bd__lac">Scène du Lac</span>
+            <span class="bd__forest">Scène de la Forêt</span>
+            <span class="bd__kiosque">Le Kiosque</span>
+        </div>
+        <div class="badge__statuts">
+            <p><strong>Statuts</strong></p>
+            <span class="bd__new">Nouveau</span>
+            <span class="bd__last">Dernières places</span>
+            <span class="bd__full">Complet</span>
+        </div>
+        <div class="badge__tailles">
+            <p><strong>tailles</strong></p>
+            <span class="bd__small">Petit</span>
+            <span class="bd__big">Grand</span>
+        </div>
+        <div class="badge__styles">
+            <p><strong>Styles</strong></p>
+            <span class="bd__arrondi">Plein arrondi</span>
+            <span class="bd__border">Contour</span>
+            <span class="angles90">Angles droits</span>
+        </div>
+        <div class="badge__compteur">
+            <p><strong>Compteur</strong></p>
+            <span class="bd__compteur" data-count="3">&hearts; Mon programme</span>
+        </div>
+    </section>
+
+    <section class="cartes">
+        <h2><strong>Cartes</strong></h2>
+        <br>
+        <p>La carte d'artiste, ses variantes, et les autres cartes du site.</p>
+
+        <div class="carte__base">
+            <p><strong>Carte de base</strong></p>
+            <div class="carte__liste">
+                <article class="carte carte__lac">
+                    <img class="carte__img" src="./assets/img/maree-basse.jpg" alt="Batterie sous lumière bleue">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Scène du Lac</span>
+                        <h3 class="carte__titre">Marée Basse</h3>
+                        <p class="carte__meta">Rock · Ven. 9 · 20 h 15</p>
+                        <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="carte carte__kiosque carte__noimg">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Le Kiosque</span>
+                        <h3 class="carte__titre">Clara Ninon Quartet</h3>
+                        <p class="carte__meta">Jazz vocal · Ven. 9 · 18 h 30</p>
+                        <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="carte carte__kiosque">
+                    <img class="carte__img" src="./assets/img/cordes-sensibles.jpg" alt="Batterie dans un kiosque en bois">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Le Kiosque</span>
+                        <h3 class="carte__titre">Cordes Sensibles et l'Ensemble du Kiosque</h3>
+                        <p class="carte__meta">Acoustique · Sam. 10 · 17 h 30</p>
+                    </div>
+                    <div class="carte__actions">
+                        <button class="btn__secondary">Voir la fiche</button>
+                        <button class="btn__border">&plus; Ajouter</button>
+                    </div>
+                </article>
+            </div>
+            <p class="carte__legende">Avec image · sans image · titre sur deux lignes et pied avec actions</p>
+        </div>
+
+        <div class="carte__variantes">
+            <p><strong>Variantes</strong></p>
+            <div class="carte__liste">
+                <article class="carte carte__vedette carte__lac">
+                    <img class="carte__img" src="./assets/img/lune-rousse.jpg" alt="Scène éclairée en rouge">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Scène du Lac</span>
+                        <h3 class="carte__titre">Lune Rousse</h3>
+                        <p class="carte__meta">Pop · Ven. 9 · 22 h 30</p>
+                        <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="carte carte__compact carte__forest">
+                    <img class="carte__img" src="./assets/img/brume.jpg" alt="Public filmant un concert">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Scène de la Forêt</span>
+                        <h3 class="carte__titre">Brume</h3>
+                        <p class="carte__meta">House · Sam. 10 · 01 h 00</p>
+                        <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="carte carte__compact carte__forest">
+                    <img class="carte__img" src="./assets/img/sylve.jpg" alt="Lasers bleus sur la foule">
+                    <div class="carte__corps">
+                        <span class="carte__badge">Scène de la Forêt</span>
+                        <h3 class="carte__titre">Sylve</h3>
+                        <p class="carte__meta">Ambient · Dim. 11 · 20 h 00</p>
+                        <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                    </div>
+                </article>
+            </div>
+            <p class="carte__legende">Mise en avant (têtes d'affiche) · compacte (autres artistes)</p>
+        </div>
+
+        <div class="carte__horizontale">
+            <p><strong>Horizontale</strong></p>
+            <article class="carte carte__horizontal carte__forest">
+                <img class="carte__img" src="./assets/img/vertige-808.jpg" alt="Scène éclairée en rouge">
+                <div class="carte__corps">
+                    <span class="carte__badge">Scène de la Forêt</span>
+                    <h3 class="carte__titre">Vertige 808</h3>
+                    <p class="carte__meta">Techno · Ven. 9 · 23 h 30</p>
+                    <p class="carte__desc">Un set entre house et disco, pensé pour la clairière de la forêt.</p>
+                    <a class="carte__lien" href="#">Voir la fiche &rarr;</a>
+                </div>
+            </article>
+            <p class="carte__legende">Image à gauche, contenu à droite : écrans larges et résultats de recherche</p>
+        </div>
+
+        <div class="carte__autres">
+            <p><strong>Autres cartes</strong></p>
+            <div class="carte__liste carte__etire">
+                <article class="pass">
+                    <h3 class="pass__titre">Pass 1 jour</h3>
+                    <p class="pass__prix">49 &euro;</p>
+                    <ul class="pass__liste">
+                        <li>Accès aux trois scènes</li>
+                        <li>Navette gratuite</li>
+                        <li>Bracelet nominatif</li>
+                    </ul>
+                    <button class="btn__border">Choisir</button>
+                </article>
+
+                <article class="pass pass__vedette">
+                    <span class="pass__tag">Le plus choisi</span>
+                    <h3 class="pass__titre">Pass 3 jours</h3>
+                    <p class="pass__prix">119 &euro;</p>
+                    <ul class="pass__liste">
+                        <li>Accès aux trois scènes</li>
+                        <li>Navette gratuite</li>
+                        <li>Accès prioritaire au Kiosque</li>
+                    </ul>
+                    <button class="btn__primary">Choisir</button>
+                </article>
+
+                <article class="banniere">
+                    <h3 class="banniere__titre">Scène du Lac</h3>
+                    <p class="banniere__sous">Pop et rock</p>
+                    <a class="banniere__lien" href="#">Découvrir la scène &rarr;</a>
+                </article>
+
+                <article class="info">
+                    <div class="info__tete">
+                        <span class="info__num">1</span>
+                        <h3 class="info__titre">Accès</h3>
+                    </div>
+                    <p class="info__txt">En train : gare de Saint-Aulnes, puis navette gratuite.</p>
+                </article>
+            </div>
+            <p class="carte__legende">Formules de pass (normale et mise en avant) · bandeau d'accès à une scène · bloc d'informations pratiques</p>
+        </div>
+    </section>
+
+        <section class="formulaires">
+        <h2><strong>Formulaires</strong></h2>
+        <br>
+        <p>Champ de saisie, liste déroulante et case à cocher, avec leurs états.</p>
+ 
+        <div class="form__champs">
+            <p><strong>Champ de saisie</strong></p>
+            <div class="champ">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" value="Durand">
+                <span class="champ__aide">Texte d'aide</span>
+            </div>
+            <div class="champ champ__focus">
+                <label for="formule">Formule</label>
+                <input type="text" id="formule" value="Pass 3 jours">
+                <span class="champ__aide">Focus</span>
+            </div>
+            <div class="champ champ__erreur">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" value="camille.durand@" aria-invalid="true" aria-describedby="email-erreur">
+                <span class="champ__aide" id="email-erreur">Adresse e-mail invalide.</span>
+            </div>
+            <div class="champ">
+                <label for="promo">Code promo</label>
+                <input type="text" id="promo" placeholder="Indisponible" disabled>
+                <span class="champ__aide">Désactivé</span>
+            </div>
+        </div>
+ 
+        <div class="form__liste">
+            <p><strong>Liste et case</strong></p>
+            <div class="champ champ__liste">
+                <label for="pass">Nombre de pass</label>
+                <select id="pass">
+                    <option>1</option>
+                    <option selected>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
+            </div>
+            <label class="case">
+                <input type="checkbox" checked>
+                <span class="case__boite"></span>
+                J'accepte les conditions générales
+            </label>
+            <label class="case">
+                <input type="checkbox">
+                <span class="case__boite"></span>
+                Recevoir la newsletter
+            </label>
+        </div>
+    </section>
+ 
+    <section class="filtres">
+        <h2><strong>Filtres</strong></h2>
+        <br>
+        <p>Groupe de boutons qui filtre le programme ; un seul filtre est sélectionné à la fois.</p>
+ 
+        <div class="filtre__ligne">
+            <p><strong>Groupe de filtres</strong></p>
+            <div>
+                <div class="filtre__groupe">
+                    <button class="filtre" aria-pressed="false">Toutes les scènes</button>
+                    <button class="filtre" aria-pressed="true">Scène du Lac</button>
+                    <button class="filtre" aria-pressed="false">Scène de la Forêt</button>
+                    <button class="filtre" aria-pressed="false">Le Kiosque</button>
+                </div>
+                <p class="filtre__legende">Normal · sélectionné (ici « Scène du Lac »)</p>
+            </div>
+        </div>
+    </section>
+ 
+    <section class="faq">
+        <h2><strong>Questions fréquentes</strong></h2>
+        <br>
+        <p>Accordéon : chaque question s'ouvre et se ferme indépendamment.</p>
+ 
+        <div class="faq__fermee">
+            <p><strong>Fermée</strong></p>
+            <details class="faq__item">
+                <summary>Les enfants sont-ils acceptés ?</summary>
+                <p>Oui, les enfants de moins de 12 ans entrent gratuitement, accompagnés d'un adulte.</p>
+            </details>
+        </div>
+ 
+        <div class="faq__ouverte">
+            <p><strong>Ouverte</strong></p>
+            <details class="faq__item" open>
+                <summary>Puis-je revendre mon pass ?</summary>
+                <p>Oui, via la plateforme officielle de revente, jusqu'à 48 heures avant le festival. Le pass est alors réédité au nom du nouvel acheteur.</p>
+            </details>
+        </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+@use "../abstracts/variables" as *;
+
+.navbar__link {
+    transition: color .2s;
+
+    &:hover,
+    &--active {
+        border-bottom-color: $primary__color;
+    }
+}
+
+.navbar__button,
+.hero__button,
+.stages__link,
+.footer__column a,
+.footer__bottom a {
+    transition: background-color .2s, color .2s, opacity .2s;
+}
+
+.hero__button--primary:hover,
+.navbar__button--primary:hover {
+    background-color: $primary__hover;
+}
+
+.hero__button--secondary:hover {
+    background-color: rgba($bck, .15);
+}
+
+.programme__filter-button {
+    transition: background-color .2s, color .2s, border-color .2s;
+
+    &:hover {
+        background-color: $bck__altern;
+    }
+}
+
+.programme__filter-button--active:hover {
+    background-color: $txt__courant;
+}
+
+.page--programme {
+    .navbar__link {
+        transition: color .2s;
+    }
+
+    .navbar__link:hover,
+    .navbar__link--active {
+        color: $txt__primary;
+    }
+
+    .navbar__link--active {
+        border-bottom-color: #d9381e;
+    }
+
+    .artist-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, .05);
+    }
+
+    .artist-card__link:hover {
+        opacity: .8;
+    }
+}
+
+.stages__link {
+    opacity: .9;
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.footer__column a:hover {
+    color: $bck;
+}
+
+.footer__bottom a:hover {
+    color: $txt__secondary;
+}

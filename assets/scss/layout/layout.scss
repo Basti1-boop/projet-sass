@@ -1,0 +1,1062 @@
+@use "../abstracts/variables" as *;
+
+// Couleurs de statut (à déplacer dans tes variables si tu veux)
+$success-bg:  #e3f4e6;
+$success-txt: #2f6b3a;
+$warning-bg:  #fdf0cf;
+$warning-txt: #8a5a00;
+$error-bg:    #fbdcd8;
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+// ======================== COMMUN ========================
+h2 {
+    margin: 0 0 $space__s;
+    padding-bottom: $space__xs;
+    border-bottom: 2px solid $primary__color;
+    font-size: $font__subtitle;
+    color: $txt__primary;
+}
+
+section > p {
+    margin: 0 0 $space__m;
+    font-size: $font__small;
+    color: $txt__secondary;
+}
+
+// Lignes avec un label à gauche
+.color,
+.scenes,
+.typo,
+.space,
+.boutons > div,
+.badges > div {
+    display: flex;
+    align-items: center;
+    gap: $space__m;
+
+    > p {
+        flex: 0 0 160px;
+        margin: 0;
+        font-size: $font__small;
+        color: $txt__primary;
+    }
+}
+
+// ======================== JETONS ========================
+.color,
+.scenes,
+.typo,
+.space {
+    padding: $space__m 0;
+    margin: 0 0 $space__xl;
+}
+
+// Couleurs
+.color {
+    padding-bottom: $space__l;
+
+    span {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        border-radius: $border__big;
+
+        &::after {
+            position: absolute;
+            top: calc(100% + #{$space__xs});
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 11px;
+            color: $txt__secondary;
+        }
+    }
+
+    &__txt       { background: $txt__primary; }
+    &__courant   { background: $txt__courant; }
+    &__txt2      { background: $txt__secondary; }
+    &__altern    { background: $bck__altern; }
+    &__border    { background: $border__color; }
+    &__principal { background: $primary__color; }
+    &__hover     { background: $primary__hover; }
+    &__accent    { background: $accent; }
+    &__error     { background: $error; }
+
+    &__txt::after       { content: "Texte principal"; }
+    &__courant::after   { content: "Texte courant"; }
+    &__txt2::after      { content: "Texte secondaire"; }
+    &__altern::after    { content: "Fond alterné"; }
+    &__border::after    { content: "Bordures"; }
+    &__principal::after { content: "Principale"; }
+    &__hover::after     { content: "Survol"; }
+    &__accent::after    { content: "Accent"; }
+    &__error::after     { content: "Erreur"; }
+}
+
+// Scènes
+.scenes {
+    padding-bottom: $space__l;
+
+    span {
+        position: relative;
+        padding: 12px $space__s;
+        border-radius: $border__small;
+        font-size: $font__small;
+        font-weight: 700;
+        color: $bck;
+
+        &::after {
+            position: absolute;
+            top: calc(100% + #{$space__xs});
+            left: 0;
+            font-size: 11px;
+            font-weight: 400;
+            color: $txt__secondary;
+        }
+    }
+
+    .sc__lac     { background: $scene__lac;     &::after { content: "#1F4E8C"; } }
+    .sc__forest  { background: $scene__forest;  &::after { content: "#2F6B3A"; } }
+    .sc__kiosque { background: $scene__kiosque; &::after { content: "#B87A1E"; } }
+}
+
+// Typographies
+.typo {
+    align-items: baseline;
+
+    .font__title    { font-size: $font__section;  font-weight: 800; color: $txt__primary; }
+    .font__subtitle { font-size: $font__subtitle; font-weight: 700; color: $txt__primary; }
+    .font__into     { font-size: $font__intro;    color: $txt__courant; }
+    .font__courant  { font-size: $font_txt;       color: $txt__courant; }
+    .font__small    { font-size: $font__small;    color: $txt__secondary; }
+}
+
+// Espacements
+.space {
+    align-items: flex-end;
+    gap: $space__l;
+
+    span {
+        position: relative;
+        background: $primary__color;
+
+        &::after {
+            position: absolute;
+            top: calc(100% + #{$space__xs});
+            left: 0;
+            font-size: 11px;
+            color: $txt__secondary;
+            white-space: nowrap;
+        }
+    }
+
+    &__xs { width: $space__xs; height: $space__xs; &::after { content: "8 px"; } }
+    &__s  { width: $space__s;  height: $space__s;  &::after { content: "16 px"; } }
+    &__m  { width: $space__m;  height: $space__m;  &::after { content: "24 px"; } }
+    &__l  { width: $space__l;  height: $space__l;  &::after { content: "40 px"; } }
+    &__xl { width: $space__xl; height: $space__xl; &::after { content: "64 px"; } }
+}
+
+// ======================== BOUTONS ========================
+.boutons {
+    > div { margin: 0 0 $space__l; }
+
+    button {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: $space__xs;
+        padding: 12px 20px;
+        border: 2px solid transparent;
+        border-radius: $border__small;
+        background: $primary__color;
+        color: $bck;
+        font-family: inherit;
+        font-size: $font__small;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+    }
+
+    // Couleurs
+    .btn__secondary {
+        background: $txt__primary;
+    }
+
+    .btn__border,
+    .btn__hearts,
+    .btn__next {
+        background: $bck;
+        border-color: $txt__primary;
+        color: $txt__primary;
+    }
+
+    .btn__dark {
+        padding: $space__m;
+        background: $txt__primary;
+        border-radius: $border__medium;
+    }
+
+    .btn__light {
+        background: $bck;
+        color: $txt__primary;
+    }
+
+    // Tailles
+    .btn__small { padding: 8px 12px;  font-size: 11px; }
+    .btn__midum { padding: 12px 20px; font-size: $font__small; }
+    .btn__big   { padding: 16px 32px; font-size: $font_txt; }
+
+    // Avec icône
+    .btn__reserver {
+        background: $txt__primary;
+        &::before { content: "\1F39F"; }
+    }
+    .btn__hearts { padding: 8px 10px; }
+    .btn__next   { padding: 8px 12px; font-size: 11px; }
+
+    // Combinaisons et états
+    .btn__combinaison {
+        align-items: flex-start;
+        margin-bottom: $space__xl;
+
+        button::after {
+            position: absolute;
+            top: calc(100% + #{$space__xs});
+            left: 0;
+            font-size: 11px;
+            font-weight: 400;
+            white-space: nowrap;
+            color: $txt__secondary;
+        }
+    }
+
+    .btn__secondary__big {
+        padding: 20px 40px;
+        font-size: $font_txt;
+        background: $txt__primary;
+    }
+
+    .btn__hover {
+        background: $primary__hover;
+    }
+
+    .btn__focus {
+        outline: 3px solid rgba($primary__color, .35);
+        outline-offset: 2px;
+    }
+
+    .btn__disabled {
+        opacity: .45;
+        cursor: not-allowed;
+        &::after { content: "Désactivé"; }
+    }
+
+    .btn__load {
+        color: transparent;
+        pointer-events: none;
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba($bck, .4);
+            border-top-color: $bck;
+            border-radius: 50%;
+            animation: spin .8s linear infinite;
+        }
+        &::after { content: "Chargement"; color: $txt__secondary; }
+    }
+}
+
+// ======================== BADGES ========================
+.badges {
+    > div { margin: 0 0 $space__l; }
+
+    span {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: $space__xs;
+        padding: 4px 8px;
+        border-radius: $border__small;
+        background: $bck__altern;
+        color: $txt__primary;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    // Scènes + tailles + styles
+    .bd__lac, .bd__forest, .bd__kiosque,
+    .bd__small, .bd__big, .bd__arrondi, .bd__border, .bd__angles {
+        color: $bck;
+    }
+    .bd__lac, .bd__small, .bd__big { background: $scene__lac; }
+    .bd__forest                    { background: $scene__forest; }
+    .bd__kiosque                   { background: $scene__kiosque; }
+
+    .bd__lac, .bd__forest, .bd__kiosque,
+    .bd__small, .bd__big, .bd__arrondi, .bd__border {
+        border-radius: $border__big;
+    }
+
+    // Statuts
+    .bd__new  { background: $success-bg; color: $success-txt; border-radius: $border__big; }
+    .bd__last { background: $warning-bg; color: $warning-txt; border-radius: $border__big; }
+    .bd__full { background: $error-bg;   color: $error;       border-radius: $border__big; }
+
+    // Tailles
+    .bd__small { padding: 4px 10px; }
+    .bd__big   { padding: 8px 16px; font-size: $font__small; }
+
+    // Styles
+    .bd__arrondi { background: $scene__forest; }
+    .bd__border {
+        background: $bck;
+        border: 1.5px solid $scene__forest;
+        color: $scene__forest;
+    }
+    .bd__angles {
+        background: $scene__kiosque;
+        border-radius: 0;
+    }
+
+    // Compteur
+    .bd__compteur {
+        padding: 12px 20px;
+        background: $txt__primary;
+        color: $bck;
+        font-size: $font__small;
+
+        &::after {
+            content: attr(data-count);
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            display: grid;
+            place-items: center;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: $primary__color;
+            font-size: 10px;
+        }
+    }
+}
+
+// ======================== CARTES ========================
+.cartes {
+    > div { margin: 0 0 $space__xl; }
+
+    > div > p:first-child {
+        margin: 0 0 $space__s;
+        font-size: $font__small;
+        font-weight: 700;
+        color: $txt__primary;
+    }
+
+    .carte__legende {
+        margin: $space__m 0 0;
+        font-size: 11px;
+        color: $txt__secondary;
+    }
+
+    // Couleur de scène (utilisée par la bordure et le badge)
+    .carte__lac     { --scene: #{$scene__lac}; }
+    .carte__forest  { --scene: #{$scene__forest}; }
+    .carte__kiosque { --scene: #{$scene__kiosque}; }
+
+    // Rangées de cartes
+    .carte__liste {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: $space__m;
+    }
+    .carte__etire { align-items: stretch; }
+
+    // Boutons dans les cartes
+    button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: $space__xs;
+        padding: 10px 16px;
+        border: 2px solid transparent;
+        border-radius: $border__small;
+        background: $txt__primary;
+        color: $bck;
+        font-family: inherit;
+        font-size: $font__small;
+        font-weight: 700;
+        cursor: pointer;
+    }
+    .btn__primary { background: $primary__color; }
+    .btn__border  {
+        background: $bck;
+        border-color: $txt__primary;
+        color: $txt__primary;
+    }
+
+    // ---------- Carte d'artiste ----------
+    .carte {
+        width: 280px;
+        overflow: hidden;
+        background: $bck;
+        border: 1px solid $border__color;
+        border-radius: $border__medium;
+
+        &__img {
+            display: block;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--scene);
+        }
+
+        &__noimg { border-top: 4px solid var(--scene); }
+
+        &__corps {
+            display: flex;
+            flex-direction: column;
+            gap: $space__xs;
+            padding: $space__s;
+        }
+
+        &__badge {
+            align-self: flex-start;
+            padding: 4px 10px;
+            border-radius: $border__big;
+            background: var(--scene);
+            color: $bck;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        &__titre {
+            margin: 0;
+            font-size: $font_txt;
+            font-weight: 700;
+            color: $txt__primary;
+        }
+
+        &__meta {
+            margin: 0;
+            font-size: 12px;
+            color: $txt__secondary;
+        }
+
+        &__desc {
+            margin: 0;
+            font-size: $font__small;
+            color: $txt__secondary;
+        }
+
+        &__lien {
+            font-size: 12px;
+            font-weight: 700;
+            color: $primary__color;
+            text-decoration: none;
+        }
+
+        &__actions {
+            display: flex;
+            gap: $space__xs;
+            padding: $space__s;
+            border-top: 1px solid $border__color;
+
+            button { flex: 1; }
+        }
+
+        // Variantes
+        &__vedette {
+            width: 340px;
+
+            .carte__img { height: 260px; }
+            .carte__titre {
+                font-size: $font__intro;
+                font-weight: 800;
+                text-transform: uppercase;
+            }
+        }
+
+        &__compact {
+            width: 210px;
+
+            .carte__img { height: 100px; }
+            .carte__titre { font-size: $font__small; }
+        }
+
+        &__horizontal {
+            display: flex;
+            width: 100%;
+            max-width: 640px;
+
+            .carte__img {
+                flex-shrink: 0;
+                width: 220px;
+                height: auto;
+                border-bottom: 0;
+                border-right: 4px solid var(--scene);
+            }
+            .carte__corps {
+                justify-content: center;
+                gap: $space__s;
+                padding: $space__m;
+            }
+            .carte__titre { font-size: $font__intro; }
+        }
+    }
+
+    // ---------- Autres cartes ----------
+    .pass {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: $space__s;
+        width: 220px;
+        padding: $space__m;
+        background: $bck;
+        border: 1px solid $border__color;
+        border-radius: $border__medium;
+
+        &__titre {
+            margin: 0;
+            font-size: $font_txt;
+            font-weight: 700;
+            color: $txt__primary;
+        }
+
+        &__prix {
+            margin: 0;
+            font-size: $font__subtitle;
+            font-weight: 800;
+            color: $primary__color;
+        }
+
+        &__liste {
+            display: flex;
+            flex-direction: column;
+            gap: $space__xs;
+            margin: 0;
+            padding: $space__s 0 0;
+            border-top: 1px solid $border__color;
+            list-style: none;
+            font-size: 12px;
+
+            li::before {
+                content: "\2713";
+                margin-right: $space__xs;
+                font-weight: 700;
+                color: $scene__forest;
+            }
+        }
+
+        button {
+            width: 100%;
+            margin-top: auto;
+        }
+
+        &__vedette {
+            background: $txt__primary;
+            border-color: $txt__primary;
+            color: $bck;
+
+            .pass__titre { color: $bck; }
+            .pass__prix  { color: $accent; }
+            .pass__liste {
+                border-top-color: rgba($bck, .15);
+                li::before { color: $accent; }
+            }
+        }
+
+        &__tag {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 2px 10px;
+            border-radius: $border__big;
+            background: $accent;
+            color: $txt__primary;
+            font-size: 11px;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+    }
+
+    .banniere {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: $space__xs;
+        width: 220px;
+        padding: $space__m;
+        background: $scene__lac;
+        border-radius: $border__medium;
+        color: $bck;
+
+        &__titre { margin: 0; font-size: $font__intro; font-weight: 700; }
+        &__sous  { margin: 0; font-size: 12px; opacity: .85; }
+        &__lien  {
+            margin-top: $space__xs;
+            font-size: 12px;
+            font-weight: 700;
+            color: $bck;
+            text-decoration: none;
+        }
+    }
+
+    .info {
+        width: 220px;
+        padding: $space__m;
+        background: $bck;
+        border: 1px solid $border__color;
+        border-radius: $border__medium;
+
+        &__tete {
+            display: flex;
+            align-items: center;
+            gap: $space__s;
+            margin-bottom: $space__s;
+        }
+
+        &__num {
+            display: grid;
+            place-items: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: $bck__altern;
+            color: $primary__color;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        &__titre { margin: 0; font-size: $font_txt; font-weight: 700; color: $txt__primary; }
+        &__txt   { margin: 0; font-size: 12px; color: $txt__secondary; }
+    }
+}
+
+// ======================== FORMULAIRES / FILTRES / FAQ ========================
+.formulaires,
+.filtres,
+.faq {
+    > div {
+        display: flex;
+        align-items: flex-start;
+        gap: $space__m;
+        margin: 0 0 $space__l;
+
+        > p {
+            flex: 0 0 160px;
+            margin: 0;
+            font-size: $font__small;
+            color: $txt__primary;
+        }
+    }
+
+    // ---------- Mise en page du festival ----------
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        height: 72px;
+    }
+
+    .navbar__container,
+    .hero__content,
+    .festival__container,
+    .headliners__container,
+    .stages__container,
+    .footer__container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .navbar__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .hero {
+        position: relative;
+        height: 480px;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    .hero__background {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .hero__overlay {
+        position: absolute;
+        inset: 0;
+    }
+
+    .hero__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .festival {
+        padding: 80px 0 60px;
+    }
+
+    .festival__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+    }
+
+    .festival__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space__s;
+    }
+
+    .headliners,
+    .stages {
+        padding: 60px 0;
+    }
+
+    .headliners__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 30px;
+    }
+
+    .headliners__grid,
+    .stages__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space__m;
+    }
+
+    .footer {
+        margin-top: 60px;
+        padding: 60px 0 30px;
+    }
+
+    .footer__grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: $space__l;
+        margin-bottom: 50px;
+    }
+
+    .programme-header {
+        padding: 40px 0 50px;
+    }
+
+    .programme-header__container,
+    .programme__container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .programme {
+        padding: 30px 0 60px;
+    }
+
+    .programme__filter-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: $space__m;
+        margin-bottom: 20px;
+        padding-bottom: 30px;
+    }
+
+    .programme__filter-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .programme__filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .programme__day {
+        margin-bottom: 50px;
+    }
+
+    .programme__artists {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: $space__m;
+    }
+
+    .page--programme .footer {
+        margin-top: 40px;
+    }
+
+    @media (max-width: 900px) {
+        .festival__grid,
+        .headliners__grid,
+        .stages__grid,
+        .footer__grid {
+            grid-template-columns: 1fr;
+        }
+
+        .navbar__links {
+            display: none;
+        }
+
+        .programme__artists {
+            grid-template-columns: 1fr;
+        }
+
+        .programme__filter-bar {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: $space__s;
+        }
+    }
+}
+
+// ---------- Formulaires ----------
+.formulaires {
+    .form__champs > p { padding-top: 28px; }
+
+    .form__liste {
+        align-items: flex-end;
+
+        > p { margin-bottom: 14px; }
+    }
+
+    .champ {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: $space__xs;
+        min-width: 0;
+
+        label {
+            font-size: 11px;
+            font-weight: 700;
+            color: $txt__primary;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid $border__color;
+            border-radius: $border__small;
+            background: $bck;
+            color: $txt__primary;
+            font-family: inherit;
+            font-size: $font__small;
+
+            &:focus {
+                outline: none;
+                border-color: $primary__color;
+                box-shadow: 0 0 0 3px rgba($primary__color, .15);
+            }
+
+            &:disabled {
+                background: $bck__altern;
+                color: $txt__secondary;
+                cursor: not-allowed;
+            }
+        }
+
+        select {
+            appearance: none;
+            padding-right: 40px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%231c1b2e' stroke-width='2'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        &__aide {
+            font-size: 11px;
+            color: $txt__secondary;
+        }
+
+        // États statiques pour la démo
+        &__focus input {
+            border-color: $primary__color;
+            box-shadow: 0 0 0 3px rgba($primary__color, .15);
+        }
+
+        &__erreur {
+            input { border-color: $error; }
+            .champ__aide { color: $error; }
+        }
+
+        &__liste { flex: 0 0 220px; }
+    }
+
+    // Case à cocher
+    .case {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: $space__xs;
+        margin-bottom: 12px;
+        font-size: 12px;
+        color: $txt__courant;
+        cursor: pointer;
+
+        input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        &__boite {
+            position: relative;
+            width: 18px;
+            height: 18px;
+            border: 1.5px solid $txt__secondary;
+            border-radius: 4px;
+            background: $bck;
+        }
+
+        input:checked + .case__boite {
+            background: $primary__color;
+            border-color: $primary__color;
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 1px;
+                left: 5px;
+                width: 4px;
+                height: 9px;
+                border: solid $bck;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+        }
+
+        input:focus-visible + .case__boite {
+            outline: 3px solid rgba($primary__color, .35);
+            outline-offset: 2px;
+        }
+    }
+}
+
+// ---------- Filtres ----------
+.filtres {
+    .filtre__groupe {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space__s;
+    }
+
+    .filtre {
+        padding: 10px 20px;
+        border: 1px solid $border__color;
+        border-radius: $border__big;
+        background: $bck;
+        color: $txt__primary;
+        font-family: inherit;
+        font-size: 12px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background .2s, color .2s;
+
+        &:hover { background: $bck__altern; }
+
+        &:focus-visible {
+            outline: 3px solid rgba($primary__color, .35);
+            outline-offset: 2px;
+        }
+
+        &__actif,
+        &[aria-pressed="true"] {
+            background: $txt__primary;
+            border-color: $txt__primary;
+            color: $bck;
+
+            &:hover { background: $txt__courant; }
+        }
+    }
+
+    .filtre__legende {
+        margin: $space__s 0 0;
+        font-size: 11px;
+        color: $txt__secondary;
+    }
+}
+
+// ---------- Questions fréquentes ----------
+.faq {
+    .faq__item {
+        flex: 1;
+        padding: $space__m;
+        background: $bck;
+        border: 1px solid $border__color;
+        border-radius: $border__medium;
+
+        &[open] { border: 1.5px solid $txt__primary; }
+
+        summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: $space__m;
+            font-size: $font__small;
+            font-weight: 700;
+            color: $txt__primary;
+            list-style: none;
+            cursor: pointer;
+
+            &::-webkit-details-marker { display: none; }
+
+            &::after {
+                content: "";
+                flex-shrink: 0;
+                width: 8px;
+                height: 8px;
+                border: solid $txt__primary;
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+                transition: transform .2s;
+            }
+
+            &:focus-visible {
+                outline: 3px solid rgba($primary__color, .35);
+                outline-offset: 4px;
+            }
+        }
+
+        &[open] summary::after { transform: rotate(-135deg); }
+
+        p {
+            margin: $space__s 0 0;
+            font-size: 12px;
+            line-height: 1.6;
+            color: $txt__courant;
+        }
+    }
+}

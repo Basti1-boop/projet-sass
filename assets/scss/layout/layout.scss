@@ -66,25 +66,61 @@
         }
     }
 
-    &__txt       { background: $txt__primary; }
-    &__courant   { background: $txt__courant; }
-    &__txt2      { background: $txt__secondary; }
-    &__altern    { background: $bck__altern; }
-    &__border    { background: $border__color; }
-    &__principal { background: $primary__color; }
-    &__hover     { background: $primary__hover; }
-    &__accent    { background: $accent; }
-    &__error     { background: $error; }
+    &__txt       {
+        background: $txt__primary;
+    }
+    &__courant   {
+        background: $txt__courant;
+    }
+    &__txt2      {
+        background: $txt__secondary;
+    }
+    &__altern    {
+        background: $bck__altern;
+    }
+    &__border    {
+        background: $border__color;
+    }
+    &__principal {
+        background: $primary__color;
+    }
+    &__hover     {
+        background: $primary__hover;
+    }
+    &__accent    {
+        background: $accent;
+    }
+    &__error     {
+        background: $error;
+    }
 
-    &__txt::after       { content: "Texte principal"; }
-    &__courant::after   { content: "Texte courant"; }
-    &__txt2::after      { content: "Texte secondaire"; }
-    &__altern::after    { content: "Fond alterné"; }
-    &__border::after    { content: "Bordures"; }
-    &__principal::after { content: "Principale"; }
-    &__hover::after     { content: "Survol"; }
-    &__accent::after    { content: "Accent"; }
-    &__error::after     { content: "Erreur"; }
+    &__txt::after       {
+        content: "Texte principal";
+    }
+    &__courant::after   {
+        content: "Texte courant";
+    }
+    &__txt2::after      {
+        content: "Texte secondaire";
+    }
+    &__altern::after    {
+        content: "Fond alterné";
+    }
+    &__border::after    {
+        content: "Bordures";
+    }
+    &__principal::after {
+        content: "Principale";
+    }
+    &__hover::after     {
+        content: "Survol";
+    }
+    &__accent::after    {
+        content: "Accent";
+    }
+    &__error::after     {
+        content: "Erreur";
+    }
 }
 
 // Scènes
